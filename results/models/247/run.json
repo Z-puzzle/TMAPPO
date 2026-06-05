@@ -1,0 +1,159 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/home/lzy/\u684c\u9762/zpz/corpship/src",
+    "dependencies": [
+      "numpy==2.2.4",
+      "PyYAML==6.0.2",
+      "sacred==0.8.7",
+      "torch==2.6.0"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [
+      {
+        "commit": "7ff2fc51c0ee8a3e552604621527c55ed6276f3e",
+        "dirty": true,
+        "url": "https://github.com/Z-puzzle/corpship.git"
+      },
+      {
+        "commit": "7ff2fc51c0ee8a3e552604621527c55ed6276f3e",
+        "dirty": true,
+        "url": "https://github.com/Z-puzzle/corpship.git"
+      },
+      {
+        "commit": "7ff2fc51c0ee8a3e552604621527c55ed6276f3e",
+        "dirty": true,
+        "url": "https://github.com/Z-puzzle/corpship.git"
+      }
+    ],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_81b00f725ed27df2a7c4655816efa28e.py"
+      ],
+      [
+        "run.py",
+        "_sources/run_a8c4154d028cb9860d29520a2197e83f.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_bab429c98835922980f7a32edf8bfc3a.py"
+      ]
+    ]
+  },
+  "heartbeat": "2026-01-24T06:36:58.618615",
+  "host": {
+    "ENV": {},
+    "cpu": "13th Gen Intel(R) Core(TM) i7-13700K",
+    "gpus": {
+      "driver_version": "535.274.02",
+      "gpus": [
+        {
+          "model": "NVIDIA GeForce RTX 4080",
+          "persistence_mode": false,
+          "total_memory": 16376
+        }
+      ]
+    },
+    "hostname": "lzy",
+    "os": [
+      "Linux",
+      "Linux-6.8.0-90-generic-x86_64-with-glibc2.35"
+    ],
+    "python_version": "3.11.5"
+  },
+  "meta": {
+    "command": "my_main",
+    "config_updates": {
+      "red": {
+        "ent_coef": 0.01,
+        "env_args": {
+          "n_blues": 3,
+          "start_pos": [
+            [
+              -50,
+              40,
+              0
+            ],
+            [
+              -50,
+              20,
+              0
+            ],
+            [
+              -50,
+              0,
+              0
+            ],
+            [
+              -50,
+              -20,
+              0
+            ],
+            [
+              -50,
+              -40,
+              0
+            ],
+            [
+              0,
+              -50,
+              0
+            ],
+            [
+              0,
+              50,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "save_model_interval": 10000,
+        "t_max": 5000000
+      }
+    },
+    "named_configs": [],
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--id": null,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "red.t_max = 5000000",
+        "red.save_model_interval = 10000",
+        "red.env_args.start_pos = [[-50,40,0],[-50,20,0],[-50,0,0],[-50,-20,0],[-50,-40,0],[0,-50,0],[0,50,0],[0,0,0]]",
+        "red.ent_coef=0.01",
+        "red.env_args.n_blues = 3"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2026-01-24T02:30:37.479025",
+  "status": "RUNNING"
+}
