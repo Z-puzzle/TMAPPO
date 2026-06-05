@@ -1,0 +1,53 @@
+name: "transformer"
+# --- commnet specific parameters ---
+
+
+runner: "episode"
+
+# --- critic parameters ---
+learner: "mappo_learner"
+policy_type: "on_policy"
+buffer_size: 16
+batch_size: 16
+batch_size_run: 1
+minibatch_size: 16
+ppo_epochs: 2
+gamma: 0.99
+
+lr: 0.0001
+critic_lr: 0.0001
+td_lambda: 0.95
+ent_coef: 0.005
+clip_range: 0.1
+grad_norm_clip: 10 # Reduce magnitude of gradients above this L2 norm
+
+# --- Recurrent PPO (optional) ---
+# Train on shorter temporal chunks to reduce correlation. If you enable this, consider also setting burn_in.
+# chunk_len: number of transitions per chunk (uses chunk_len+1 timesteps internally)
+# burn_in: number of timesteps to warm up GRU hidden state (no_grad) before each chunk
+chunk_len: 16
+burn_in: 8
+
+
+# --- Agent parameters ---
+mac: "basic_mac"
+agent: "transformeragent" # Default rnn agent
+action_selector: "multinomial"
+shareparam: True #行动者网络是否共享网络参数
+obs_agent_id: False # Include the agent's one_hot id in the observation
+obs_last_action: False # Include the agent's last action (one_hot) in the observation
+mask_before_softmax: False
+agent_output_type: "pi_logits"
+
+n_layers: 2
+n_heads: 4
+model_dim: 64
+
+# --- env parameters ---
+env_args:
+  state_last_action: False # critic adds last action internally
+
+
+
+
+critic_train_reps: 1

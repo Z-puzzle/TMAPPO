@@ -1,0 +1,30 @@
+env: shiphunt
+
+
+env_args:
+  field_reward: False
+
+  replay_dir: "results/test"
+  replay_prefix: ""
+  seed: null
+  start_pos: null
+  episode_limit: 256
+  
+  gamma: 0.99
+  n_reds: 5 #红船数量
+  n_blues: 1 #蓝船数量
+  n_reds_reward: 5
+  n_blues_reward: 0
+
+  radar_range: 50
+  fire_range: 20  # 打击距离
+  fire_angle: 0.39269908169872414   # 打击范围1/8*np.pi
+  max_health: 20
+
+  blue_start_x_range: [50.0, 250.0]
+  blue_start_y_range: [-100.0, 100.0]
+
+  collision_penalty: 
+
+  state_features: ["pos", "vel","typeid"]
+

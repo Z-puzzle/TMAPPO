@@ -1,0 +1,40 @@
+name: "ippo"
+
+# --- COMA specific parameters ---
+
+
+runner: "episode"
+
+
+# --- critic parameters ---
+learner: "ippo_learner"
+policy_type: "on_policy"
+buffer_size: 8
+batch_size: 8
+batch_size_run: 1
+minibatch_size: 4
+ppo_epochs: 10
+
+lr: 0.0005
+critic_lr: 0.0001
+td_lambda: 0.95
+ent_coef: 0.001
+clip_range: 0.2
+grad_norm_clip: 10 # Reduce magnitude of gradients above this L2 norm
+
+
+# --- Agent parameters ---
+mac: "basic_mac"
+agent: "rnn" # Default rnn agent
+action_selector: "multinomial"
+obs_agent_id: False # Include the agent's one_hot id in the observation
+obs_last_action: False # Include the agent's last action (one_hot) in the observation
+mask_before_softmax: False
+
+env_args:
+  state_last_action: False # critic adds last action internally
+
+agent_output_type: "pi_logits"
+
+
+critic_train_reps: 1

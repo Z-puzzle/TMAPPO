@@ -1,0 +1,14 @@
+
+
+epsilon: 0.2
+agent_output_type: "pi_logits"
+learner: "rule_learner"
+
+gain: 1
+
+critic_train_reps: 1
+agent: "linear" 
+
+name: "rule"
+
+mac: "corp_mac"

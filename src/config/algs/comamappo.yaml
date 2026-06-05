@@ -1,0 +1,39 @@
+# --- COMA specific parameters ---
+
+action_selector: "multinomial"
+epsilon_start: .5
+epsilon_finish: .01
+#退火区间，可以和总训练步数同量级
+epsilon_anneal_time: 600000
+mask_before_softmax: False
+
+runner: "episode"
+
+buffer_size: 8
+batch_size: 8
+batch_size_run: 8
+
+# --- Agent parameters ---
+agent: "nn" #不然太耗时了
+lr: 0.0005
+critic_lr: 0.0005
+td_lambda: 0.8
+ent_coef: 0.02
+obs_agent_id: False # Include the agent's one_hot id in the observation
+obs_last_action: False # Include the agent's last action (one_hot) in the observation
+
+env_args:
+  state_last_action: False # critic adds last action internally
+
+policy_type: "on_policy"
+minibatch_size: 64
+ppo_epochs: 10
+clip_range: 0.2
+
+
+agent_output_type: "pi_logits"
+learner: "comamappo_learner"
+
+critic_train_reps: 1
+
+name: "comamappo"

@@ -1,0 +1,47 @@
+# --- COMA specific parameters ---
+
+action_selector: "multinomial"
+epsilon_start: .5
+epsilon_finish: .01
+#退火区间，可以和总训练步数同量级
+epsilon_anneal_time: 600000
+mask_before_softmax: False
+
+runner: "episode"
+
+buffer_size: 8
+batch_size: 8
+batch_size_run: 1
+
+# --- Agent parameters ---
+mac: "basic_mac"
+agent: "nn" # Default rnn agent
+shareparam: True #行动者网络是否共享网络参数
+obs_agent_id: False # Include the agent's one_hot id in the observation
+obs_last_action: False # Include the agent's last action (one_hot) in the observation
+
+env_args:
+  state_last_action: False # critic adds last action internally
+
+# update the target network every {} training steps
+target_update_interval: 200
+
+lr: 0.0005
+critic_lr: 0.0001
+td_lambda: 0.95
+ent_coef: 0.001
+obs_agent_id: False # Include the agent's one_hot id in the observation
+obs_last_action: False # Include the agent's last action (one_hot) in the observation
+policy_type: "on_policy"
+minibatch_size: 64
+ppo_epochs: 6
+clip_range: 0.2
+grad_norm_clip: 10 # Reduce magnitude of gradients above this L2 norm
+
+
+agent_output_type: "pi_logits"
+learner: "mappo_learner"
+
+critic_train_reps: 1
+
+name: "mappo"
